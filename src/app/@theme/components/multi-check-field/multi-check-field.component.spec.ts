@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResetPasswordComponent } from './reset-password.component';
+import { MultiCheckFieldComponent } from './multi-check-field.component';
 
-describe('ResetPasswordComponent', () => {
-  let component: ResetPasswordComponent;
-  let fixture: ComponentFixture<ResetPasswordComponent>;
+describe('MultiCheckFieldComponent', () => {
+  let component: MultiCheckFieldComponent;
+  let fixture: ComponentFixture<MultiCheckFieldComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResetPasswordComponent ]
+      declarations: [ MultiCheckFieldComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ResetPasswordComponent);
+    fixture = TestBed.createComponent(MultiCheckFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

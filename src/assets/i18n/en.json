@@ -1,0 +1,12 @@
+{
+    "dashboard": "Dashboard",
+    "users":"Users",
+    "products":"Products",
+    "categories":"Categories",
+    "orders":"Orders",
+    "offers":"Offers",
+    "copouns":"Copouns",
+    "user":{
+        "add":"Add User"
+    }
+}

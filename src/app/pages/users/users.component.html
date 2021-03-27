@@ -1,1 +1,47 @@
-<p>users works!</p>
+<!-- <app-data-table [tableData]="tableData" [columnHeader]="columnHeader" (events)="getEvent($event)"></app-data-table> -->
+<form [formGroup]="userGroup" (ngSubmit)="onSubmit()">
+    <app-generic-text-input 
+        [formControlName]="'firstName'" 
+        [type]="'text'" 
+        [placeholder]="'Enter Your FirstName'" 
+        [label]="'First Name'" 
+        [errorMessage]="{required: 'First Name is Required', pattern: 'Not a valid Pattern'}"
+    ></app-generic-text-input>
+
+    <app-generic-text-input 
+        [formControlName]="'lastName'" 
+        [type]="'text'" 
+        [placeholder]="'Enter Your LastName'" 
+        [label]="'Last Name'" 
+        [errorMessage]="{required: 'Last Name is Required', pattern: 'Not a valid Pattern'}"
+    ></app-generic-text-input>
+
+    <app-generic-text-input 
+        [formControlName]="'email'" 
+        [type]="'email'" 
+        [placeholder]="'Enter Your Email'" 
+        [label]="'Email'" 
+        [errorMessage]="{required: 'Email is Required', pattern: 'Not a valid Email'}"
+    ></app-generic-text-input>
+
+    <app-generic-text-input 
+        [formControlName]="'password'" 
+        [type]="'password'" 
+        [placeholder]="'Enter Your Password'" 
+        [label]="'Password'" 
+        [errorMessage]="{required: 'Password is Required', pattern: 'Not a valid Password'}"
+    ></app-generic-text-input>
+
+    <app-multi-check-field [formControlName]="'check'">
+        <app-check-option *ngFor="let val of values" [value]="val.value" [label]="val.label"></app-check-option>
+    </app-multi-check-field>
+
+    <app-radio-option 
+        *ngFor="let val of rdioValues" 
+        [label]="val.label" 
+        [value]="val.value" 
+        [formControlName]="'rado'"
+    ></app-radio-option>
+    
+    <button type="submit">Submit</button>
+</form>

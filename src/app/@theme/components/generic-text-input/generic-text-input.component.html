@@ -1,0 +1,17 @@
+<div class="form-group">
+    <label>{{label}}</label>
+    <input 
+        [type]="type"
+        [placeholder]="placeholder"
+        [formControl]="control"
+        class="form-control"/>
+</div>
+<div class="error">
+    <span *ngIf="control.touched && control.dirty && control.errors?.required && !control.valid">
+        {{errorMessage?.required}}
+    </span>
+
+    <span *ngIf="control.touched && control.dirty && control.errors?.pattern && !control.valid">
+        {{errorMessage?.pattern}}
+    </span>
+</div>

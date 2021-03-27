@@ -6,6 +6,9 @@ import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OffersComponent } from './offers/offers.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CopounsComponent } from './copouns/copouns.component';
 
 const routes: Routes = [{
   path: '',
@@ -29,8 +32,20 @@ const routes: Routes = [{
       component: OrdersComponent
     },
     {
+      path:'copouns',
+      component: CopounsComponent
+    },
+    {
+      path:'dashboard',
+      component: DashboardComponent
+    },
+    {
+      path:'offers',
+      component: OffersComponent
+    },
+    {
       path: '',
-      redirectTo: 'users',
+      redirectTo: 'dashboard',
       pathMatch: 'full',
     }
   ],

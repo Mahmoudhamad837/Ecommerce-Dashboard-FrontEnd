@@ -8,6 +8,10 @@ import { UsersModule } from './users/users.module';
 import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
 import { OrdersModule } from './orders/orders.module';
+import { CopounsModule } from './copouns/copouns.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { OffersModule } from './offers/offers.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -17,7 +21,11 @@ import { OrdersModule } from './orders/orders.module';
     UsersModule,
     ProductsModule,
     CategoriesModule,
-    OrdersModule
+    OrdersModule,
+    CopounsModule,
+    DashboardModule,
+    OffersModule,
+    TranslateModule
   ],
   declarations: [
     PagesComponent,

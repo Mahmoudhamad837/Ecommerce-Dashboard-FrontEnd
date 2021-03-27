@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../shared/language.service';
 
 import { MENU_ITEMS } from './pages-menu';
 
@@ -12,7 +14,36 @@ import { MENU_ITEMS } from './pages-menu';
     </ngx-one-column-layout>
   `,
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit{
+  public menu = [];
 
-  menu = MENU_ITEMS;
+  constructor(
+    private translate: TranslateService,
+    private langService: LanguageService
+  ) {
+
+  }
+
+  ngOnInit(): void {
+    this.menu = MENU_ITEMS;
+    this.translateMenu(this.menu);
+
+    this.langService.detectChange.subscribe(
+      res=>{
+        console.log('ressssss', res);
+        this.translateMenu(this.menu);
+      }
+    );
+  }
+
+  public translateMenu(menu: any[]) {
+    menu.forEach((item:any) => {
+      this.translate.get(item.title.toLowerCase()).subscribe(
+        res=>{
+          item.title = res;
+        }
+      );
+    });
+  }
+  
 }
